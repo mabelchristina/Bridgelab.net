@@ -18,6 +18,7 @@ namespace Program
         {
             Program p = new Program();
             p.Attendance();
+            Console.ReadLine();
         }
     }
 }
