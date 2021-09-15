@@ -13,11 +13,11 @@ namespace Program
             if (emplyoeecheck == IS_PRESENT)
             {
                 this.totalwage = WAGE_PER_HOUR * FULL_DAY_HOUR;
-                return;
+               
             }
             else
                 this.totalwage = WAGE_PER_HOUR * PART_TIME_HOUR;
-            return;
+           
         }
         static void Main(string[] args)
         {
