@@ -9,8 +9,7 @@ namespace Program
         public void Attendance()
         {
             Random random = new Random();
-            for (int i = 0; i < 20; i++)
-            {
+           
                 int emplyoeecheck = random.Next(1, 3);
                 switch (emplyoeecheck)
                 {
@@ -23,8 +22,6 @@ namespace Program
                     default:
                         emphours += 0;
                         break;
-
-                }
                 this.totalwage = WAGE_PER_HOUR * emphours;
             }    
         }
