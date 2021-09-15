@@ -4,19 +4,20 @@ namespace Program
 {
     class Program
     {
-        const int IS_PRESENT=1, WAGE_PER_HOUR=20,FULL_DAY_HOUR=8;
+        const int IS_PRESENT=1, WAGE_PER_HOUR=20,FULL_DAY_HOUR=8,PART_TIME_HOUR=4;
+        int totalwage=0;
         public void Attendance()
         {
             Random random = new Random();
-            int emplyoeecheck = random.Next(1, 2);
+            int emplyoeecheck = random.Next(0,2);
             if (emplyoeecheck == IS_PRESENT)
             {
-                int totalwage = WAGE_PER_HOUR * FULL_DAY_HOUR;
-                Console.WriteLine(totalwage);
-
+                this.totalwage = WAGE_PER_HOUR * FULL_DAY_HOUR;
+                return;
             }
             else
-                Console.WriteLine("Absent");
+                this.totalwage = WAGE_PER_HOUR * PART_TIME_HOUR;
+            return;
         }
         static void Main(string[] args)
         {
