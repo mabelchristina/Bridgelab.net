@@ -4,26 +4,36 @@ namespace Program
 {
     class Program
     {
-        const int IS_PRESENT=1, WAGE_PER_HOUR=20,FULL_DAY_HOUR=8,PART_TIME_HOUR=4;
-        int totalwage=0;
+        const int IS_FULLTIME=0,IS_PARTTIME=1, WAGE_PER_HOUR=20,FULL_DAY_HOUR=8,PART_TIME_HOUR=4;
+        int totalwage=0, emphours=0;
         public void Attendance()
         {
             Random random = new Random();
-            int emplyoeecheck = random.Next(0,2);
-            if (emplyoeecheck == IS_PRESENT)
+            for (int i = 0; i < 20; i++)
             {
-                this.totalwage = WAGE_PER_HOUR * FULL_DAY_HOUR;
-               
-            }
-            else
-                this.totalwage = WAGE_PER_HOUR * PART_TIME_HOUR;
-           
+                int emplyoeecheck = random.Next(1, 3);
+                switch (emplyoeecheck)
+                {
+                    case IS_FULLTIME:
+                        emphours += FULL_DAY_HOUR;
+                        break;
+                    case IS_PARTTIME:
+                        emphours += PART_TIME_HOUR;
+                        break;
+                    default:
+                        emphours += 0;
+                        break;
+
+                }
+                this.totalwage = WAGE_PER_HOUR * emphours;
+            }    
         }
         static void Main(string[] args)
         {
             Program p = new Program();
-            p.Attendance();
-            Console.ReadLine(); 
+            int Wage = p.totalwage;
+            Console.WriteLine(Wage);
+            Console.ReadLine();
 
         }
     }
