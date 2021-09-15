@@ -9,19 +9,21 @@ namespace Program
         public void Attendance()
         {
             Random random = new Random();
-           
+            for(int i=0; i<20; i++)
+            { 
                 int emplyoeecheck = random.Next(1, 3);
-                switch (emplyoeecheck)
-                {
-                    case IS_FULLTIME:
-                        emphours += FULL_DAY_HOUR;
-                        break;
-                    case IS_PARTTIME:
-                        emphours += PART_TIME_HOUR;
-                        break;
-                    default:
-                        emphours += 0;
-                        break;
+            switch (emplyoeecheck)
+            {
+                case IS_FULLTIME:
+                    emphours += FULL_DAY_HOUR;
+                    break;
+                case IS_PARTTIME:
+                    emphours += PART_TIME_HOUR;
+                    break;
+                default:
+                    emphours += 0;
+                    break;
+            }
                 this.totalwage = WAGE_PER_HOUR * emphours;
             }    
         }
